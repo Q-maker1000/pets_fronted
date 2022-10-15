@@ -1,37 +1,7 @@
 <template>
   <div>
-    <!--top navbar-->
-    <!-- <common-header></common-header> -->
-    <!-- <header>
-      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <a class="navbar-brand" href="#">PETS</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-          <ul class="navbar-nav mr-auto" >
-            <li v-for="(item,index) in header" :key="index" @click="headerChange(index)" class="nav-item" >
-              <router-link class="nav-link" :class="{'active':headerIndex == index}" :to="item.link">{{item.title}}</router-link>
-            </li>
-          </ul>
-          <form class="form-inline mt-2 mt-md-0">
-            <input class="form-control" type="text" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-light my-2 my-sm-0 mr-sm-1" type="submit">搜索</button>
-            <a class="btn btn-outline-primary my-2 my-sm-0" data-toggle="modal" data-target="#loginModal">
-              登录
-            </a>
-          </form>
-        </div>
-      </nav>
-    </header> -->
-
     <!--搜索框---->
-    <div class="d-flex justify-content-center">
-      <div class="form-group row mt-5 pt-4 pb-2 col-sm-8 shadow-sm round">
-        <input type="text" id="inputUsername" class="form-control col-sm-10" placeholder="请输入需要搜索的内容">
-        <button class="btn btn-primary col-sm-2" type="submit">搜索</button>
-      </div>
-    </div>
+    <search-input></search-input>
 
     <main class="container">
         <!--adv-->
@@ -150,17 +120,14 @@
 
 <script>
 import Header from '@/components/topBar.vue';
+import SearchInputVue from '../../components/SearchInput.vue';
 export default {
-  name: '',
-  data () {
+    components: {
+        'common-header': Header,
+        'search-input': SearchInputVue
+    },
+    data () {
     return {
-        // headerIndex: 0,
-        //     header:[
-        //         {title: "主页", link: "/home"},
-        //         {title: "精选萌宠", link: "/pets"},
-        //         {title: "日常用品", link: "/product"},
-        //         {title: "生活服务", link: "/service"},
-        //     ],
         serviceCategoryTag: 0,
         adv: [
             {
@@ -413,9 +380,7 @@ export default {
         ],
     };
   },
-  components: {
-    'common-header': Header,
-  },
+
   created() {
     this.headerChange(i)
   },

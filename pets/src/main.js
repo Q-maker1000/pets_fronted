@@ -12,6 +12,7 @@ import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap'
 import "bootstrap-icons/font/bootstrap-icons.css";
+import SearchInput from '@/components/SearchInput.vue';
 
 // import "bootstrap-vue/dist/bootstrap-vue.css"
 

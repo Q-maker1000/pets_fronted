@@ -1,7 +1,7 @@
 <template>
   <div id="app" class="">
     <common-header></common-header>
-    <router-view/>
+    <router-view class="container"/>
   </div>
 </template>
 
@@ -16,7 +16,7 @@ export default {
 </script>
 
 <style>
-  .app{
+  #app{
     margin-top: 65px;
   }
 </style>

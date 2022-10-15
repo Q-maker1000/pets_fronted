@@ -1,48 +1,9 @@
 <template>
   <div>
-    <!--top navbar-->
-    <!-- <header>
-      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <a class="navbar-brand" href="#">PETS</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="/">主页</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/pets">宠物</a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="/product">宠物商品</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/serivce">宠物服务</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">举报</a>
-            </li>
-          </ul>
-          <form class="form-inline mt-2 mt-md-0">
-            <a class="btn btn-outline-primary my-2 my-sm-0" data-toggle="modal" data-target="#loginModal">
-              登录
-            </a>
-          </form>
-        </div>
-      </nav>
-    </header> -->
-
-    <!--搜索框---->
-    <div class="d-flex justify-content-center">
-      <div class="form-group row mt-5 pt-4 pb-2 col-sm-8 shadow-sm round">
-        <input type="text" id="inputUsername" class="form-control col-sm-10" placeholder="请输入需要搜索的内容">
-        <button class="btn btn-primary col-sm-2" type="submit">搜索</button>
-      </div>
-    </div>
-
     <main class="container">
+      <!--搜索框---->
+      <search-input></search-input>
+      
       <!--条件筛选器-->
       <div class="mb-3">
         <div class="row border-top border-bottom">
@@ -184,8 +145,7 @@
                           <path d="M4 15a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm0 1a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm8-1a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm0 1a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM.115 3.18A.5.5 0 0 1 .5 3h15a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 14 12H2a.5.5 0 0 1-.491-.408l-1.5-8a.5.5 0 0 1 .106-.411zm.987.82 1.313 7h11.17l1.313-7H1.102z"/>
                         </svg>
                       </button>
-                    </div>
-                    <small class="text-muted">9 mins</small>
+                    </div> 
                   </div>
                 </div>
               </div>
@@ -220,8 +180,12 @@
 </template>
 
 <script>
+import SearchInputVue from '../../components/SearchInput.vue';
 export default {
   name: '',
+  components: {
+    'search-input': SearchInputVue
+  },
   data () {
     return {
       daily: ["清洁除味","猫狗窝","食具水具","笼子围栏","狗厕所"],
@@ -323,7 +287,6 @@ export default {
     };
   },
 
-  components: {},
 
   computed: {},
 
