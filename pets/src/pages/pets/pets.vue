@@ -6,8 +6,8 @@
 
     <!--顶部推荐栏-->
     <div class="d-flex flex-row flex-wrap">
-      <div v-for="item in topPets" :key="item.index" class="col-md-3 mx-0 mb-2">
-        <div class="d-flex flex-row flex-wrap rounded overflow-hidden">
+      <div v-for="item in topPets" :key="item.index" class="col-3 mx-0 mb-2">
+        <a class="d-flex flex-row flex-wrap rounded overflow-hidden text-decoration-none text-reset" href="#">
           <!--图片-->
           <div class="text-center rounded mr-2" 
             style="background-color:darkgrey;
@@ -36,16 +36,15 @@
               {{item.publisher}}
             </div>
           </div>
-        </div>
+        </a>
       </div>
     </div>
-    <hr/>
     
     <!--筛选器-->
-    <div class="mb-3">
+    <div class="my-3">
       <div class="row border-top border-bottom">
         <div class="col-2 text-center p-2" style="background-color:lightgrey">
-          <strong class="text-secondary">宠物类别</strong>
+          <strong class="text-secondary global-text">宠物类别</strong>
         </div>
         <div class="col-10">
           <ul class="nav">
@@ -55,8 +54,9 @@
           </ul>
         </div>
       </div>
+
       <div class="row border-top border-bottom">
-        <div class="col-2 text-center p-2" style="background-color:lightgrey"><strong class="text-secondary">宠物品种</strong></div>
+        <div class="col-2 text-center p-2 global-text" style="background-color:lightgrey"><strong class="text-secondary">宠物品种</strong></div>
         <div class="col-10">
           <ul class="nav">
             <li v-for="item in petsCategory" :key="item.id" class="nav-item">
@@ -65,8 +65,9 @@
           </ul>
         </div>
       </div>
+
       <div class="row border-top border-bottom">
-        <div class="col-2 text-center p-2" style="background-color:lightgrey"><strong class="text-secondary">体型</strong></div>
+        <div class="col-2 text-center p-2 global-text" style="background-color:lightgrey"><strong class="text-secondary">体型</strong></div>
         <div class="col-10">
           <ul class="nav">
             <li v-for="item in species[1].bodyType" :key="item.id" class="nav-item">
@@ -75,6 +76,7 @@
           </ul>
         </div>
       </div>
+
       <div class="row p1 bg-light shadow-sm p-2 my-2">
         <button class="btn btn-outline-primary py-0" type="submit"><small>综合</small></button>
         <button class="btn btn-outline-primary py-0" type="submit"><small>销量</small></button>
@@ -88,12 +90,19 @@
           <button class="col-3 btn btn-outline-primary py-0 px-1" type="submit"><small>确定</small></button>
         </div>
       </div>
+
     </div>
     <!--商品-->
     <div class="row my-3">
-      <div v-for="item in pets" :key="item.id" class="col-md-3">
+      <div v-for="item in pets" :key="item.id" class="col-3">
         <div class="card mb-4 shadow-sm">
-          <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+          <div class="text-center rounded mr-2" 
+            style="background-color:darkgrey;
+              height: 100px;
+              width: 100px;">
+            <p class="text-light m-0">image</p>
+          </div>
+          <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> -->
           <div class="card-body">
             <strong class="d-inline-block mb-3 text-danger">￥{{item.minPrice}}-{{item.maxPrice}}</strong>
             <div class="mb-1 text-muted">{{item.name}}</div>
@@ -276,3 +285,12 @@ export default {
   methods: {}
 }
 </script>
+<style scoped>
+.global-text-sm{
+  font-size: 12px;
+}
+.global-text{
+  font-size: 14px;
+}
+</style>
+

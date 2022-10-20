@@ -10,7 +10,28 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    proxyTable: {
+      // '/api': {
+      //   //设置调用接口域名和端口号别忘了加http
+      //   target: "http://127.0.0.1:8080", 
+      //   // 改变请求的地址，相当于给一个假象，后台返回的数据产生跨域问题，浏览器不接收，这时候给他换一个来源，假定是浏览器返回的，跨域问题就没有了
+      //   changeOrigin: true, 
+      //   // 重写地址，监听到请求地址有api，就进行替换
+      //   pathRewrite: { 
+      //     '^/api': '/api'
+      //   }
+      // },
+      // 访问高德地图的API
+      '/gaodeMapAPI': {
+        target: 'https://restapi.amap.com',
+        changOrigin: true,
+        // ws: true,  // 是否启用websockets
+        secure: false,
+        pathRewrite: {
+          '^/gaodeMapAPI': ''
+        }
+      }
+    },
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST

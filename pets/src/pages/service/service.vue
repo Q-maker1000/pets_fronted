@@ -12,8 +12,8 @@
                         <div class="row pr-2">
                             <div class="col-sm-6">
                                 <h5 class="card-title">{{item.title}}</h5>
-                                <p class="card-text">{{item.desc}}</p>
-                                <a href="#" class="btn-sm btn-primary">现在去看看</a>
+                                <div class="card-text">{{item.desc}}</div>
+                                <a href="#" class="btn-sm btn-primary" style="font-size: 12px;">现在去看看</a>
                             </div>
                             <div class="col-sm-6 mh-100 mx-0 text-center rounded" style="background-color:darkgrey">
                                 <p class="text-light">image</p>

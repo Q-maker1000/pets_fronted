@@ -12,6 +12,7 @@ import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap'
 import "bootstrap-icons/font/bootstrap-icons.css";
+import 'element-ui/lib/theme-chalk/index.css'; 
 import SearchInput from '@/components/SearchInput.vue';
 
 // import "bootstrap-vue/dist/bootstrap-vue.css"
@@ -21,10 +22,13 @@ Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
 // Vue.use(bootstrapIcon)
 
-Vue.config.productionTip = false
-Vue.prototype.$axios = axios
 // 全局注册 $
 Vue.prototype.$ = $
+Vue.config.productionTip = false
+Vue.prototype.$http = axios
+Vue.prototype.$axios = axios
+
+
 
 /* eslint-disable no-new */
 new Vue({

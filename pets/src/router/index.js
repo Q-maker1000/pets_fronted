@@ -5,6 +5,7 @@ import Home from '@/pages/home/home'
 import Pets from '@/pages/pets/pets'
 import Product from '@/pages/product/product'
 import Service from '@/pages/service/service'
+import Detail from '@/pages/detail/detail'
 
 Vue.use(Router)
 
@@ -35,6 +36,11 @@ export default new Router({
       path: '/service',
       name: 'Service',
       component: Service
+    },
+    {
+      path: '/detail',
+      name: 'Detail',
+      component: Detail
     },
   ]
 })
